@@ -27,7 +27,8 @@ DATABASES = {
         'PORT':'3306'
     }
 }
-DATABASES["default"] = dj_database_url.parse("postgres://djangovideoteca_user:26KLVuDsZL6Uejq906g2np7FbTPAsA6r@dpg-cldv4g6f27hc738oqrag-a.oregon-postgres.render.com/djangovideoteca")
+database_url = os.environ.get("DATABASE_URL")
+DATABASES["default"] = dj_database_url.parse(database_url)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
